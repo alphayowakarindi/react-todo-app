@@ -5,7 +5,7 @@ import TodoItem from './TodoItem';
 // eslint-disable-next-line react/prefer-stateless-function
 class TodosList extends React.Component {
   render() {
-    const { todos, handleChangeProps } = this.props;
+    const { todos, handleChangeProps, deleteTodoProps } = this.props;
 
     return (
       <ul>
@@ -14,6 +14,7 @@ class TodosList extends React.Component {
             key={todo.id}
             todo={todo}
             handleChangeProps={handleChangeProps}
+            deleteTodoProps={deleteTodoProps}
           />
         ))}
       </ul>
@@ -24,6 +25,7 @@ class TodosList extends React.Component {
 TodosList.propTypes = {
   todos: PropTypes.isRequired,
   handleChangeProps: PropTypes.isRequired,
+  deleteTodoProps: PropTypes.isRequired,
 };
 
 export default TodosList;

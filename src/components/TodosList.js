@@ -5,12 +5,16 @@ import TodoItem from './TodoItem';
 // eslint-disable-next-line react/prefer-stateless-function
 class TodosList extends React.Component {
   render() {
-    const { todos } = this.props;
+    const { todos, handleChangeProps } = this.props;
 
     return (
       <ul>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            handleChangeProps={handleChangeProps}
+          />
         ))}
       </ul>
     );
@@ -19,6 +23,7 @@ class TodosList extends React.Component {
 
 TodosList.propTypes = {
   todos: PropTypes.isRequired,
+  handleChangeProps: PropTypes.isRequired,
 };
 
 export default TodosList;

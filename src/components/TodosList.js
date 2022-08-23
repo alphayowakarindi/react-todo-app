@@ -26,10 +26,13 @@ class TodosList extends React.Component {
 }
 
 TodosList.propTypes = {
-  todos: PropTypes.isRequired,
-  handleChangeProps: PropTypes.isRequired,
-  deleteTodoProps: PropTypes.isRequired,
-  setUpdate: PropTypes.isRequired,
+  todos: PropTypes.arrayOf(
+    PropTypes.objectOf(PropTypes.string, PropTypes.string, PropTypes.string),
+  ).isRequired,
+
+  handleChangeProps: PropTypes.func.isRequired,
+  deleteTodoProps: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
 };
 
 export default TodosList;

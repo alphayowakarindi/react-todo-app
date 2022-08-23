@@ -75,10 +75,11 @@ class TodoItem extends React.Component {
 }
 
 TodoItem.propTypes = {
-  todo: PropTypes.isRequired,
-  handleChangeProps: PropTypes.isRequired,
-  deleteTodoProps: PropTypes.isRequired,
-  setUpdate: PropTypes.isRequired,
+  todo: PropTypes.objectOf(PropTypes.string, PropTypes.string, PropTypes.string)
+    .isRequired,
+  handleChangeProps: PropTypes.func.isRequired,
+  deleteTodoProps: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
